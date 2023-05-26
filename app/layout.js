@@ -1,5 +1,10 @@
 import './globals.scss';
 import { Inter } from 'next/font/google';
+import Image from 'next/image';
+import Link from 'next/link';
+import cart from '../public/images/cart.svg';
+import logo from '../public/images/logo.png';
+import styles from './layout.module.scss';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -10,8 +15,35 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="en" className={` ${inter.className}`}>
+      <body>
+        <nav
+          className={`${styles.layoutHeader} ${styles.navbarAnchorElements}`}
+        >
+          <Link href="/">
+            <Image src={logo} className={styles.logo} />
+          </Link>
+
+          <ul>
+            <li>
+              <Link href="/">Home</Link>
+            </li>
+            <li>
+              <Link href="/about">About</Link>
+            </li>
+            <li>
+              <Link href="/products">Products</Link>
+            </li>
+            <li>
+              <Link href="/cart">
+                <Image src={cart} className={styles.cart} />
+              </Link>
+            </li>
+          </ul>
+        </nav>
+        <div className={styles.spaceForFixedHeader} />
+        {children}
+      </body>
     </html>
   );
 }
