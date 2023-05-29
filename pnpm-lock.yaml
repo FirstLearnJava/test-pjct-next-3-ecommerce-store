@@ -16,6 +16,9 @@ dependencies:
   sharp:
     specifier: ^0.32.1
     version: 0.32.1
+  test-pjct-next-3-ecommerce-store:
+    specifier: 'link:'
+    version: 'link:'
 
 devDependencies:
   '@types/react':

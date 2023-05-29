@@ -16,7 +16,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={` ${inter.className}`}>
-      <body>
+      <header data-test-id="products-link">
         <nav
           className={`${styles.layoutHeader} ${styles.navbarAnchorElements}`}
         >
@@ -41,6 +41,8 @@ export default function RootLayout({ children }) {
             </li>
           </ul>
         </nav>
+      </header>
+      <body>
         <div className={styles.spaceForFixedHeader} />
         {children}
       </body>
